@@ -1,0 +1,5 @@
+Please enter attack: 1.Basic Attack 2.Fireball
+
+>>>Activate Fireball<<<
+health damage: 200 magic damage: 200
+
