@@ -119,9 +119,11 @@ void dragonarc(int health, int mana){
     //Player health check
     if(h3.get_player_health()<=0){
         cout << "Defeated" << endl;
+        cout << "----------------------------------------------------------------------------"<<endl;
         exit(EXIT_FAILURE);
     }
     cout << "Successfully slayed the dragon prince!" << endl;
+    cout << "----------------------------------------------------------------------------"<<endl;
     //End of dragon arc
 
 
