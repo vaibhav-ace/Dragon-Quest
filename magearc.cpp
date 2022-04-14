@@ -109,6 +109,7 @@ void magearc(int health, int mana){
     }//For loop ends
 
     cout << "Successfully eradicated " << m13.current_mage()<< " mages..." << endl;
+    cout << "----------------------------------------------------------------------------"<<endl;
     //End of mage arc
 
     //mage variables
