@@ -9,7 +9,7 @@ using namespace std;
 //Constructor
 knight::knight(){
     //Initialising variables
-    health = 200;
+    health=200;
     count=0;
     limit=0;
     knights=nullptr;
@@ -26,7 +26,7 @@ void knight::prologue(){
 knight::knight(int curr_size, int max_size){
     limit=max_size;//Equating variables
     count=curr_size;//Equating variables
-    knights= new enemy*[limit];
+    knights=new enemy*[limit];
 }
 //Returning current knight count
 int knight::current_knight(){
@@ -36,7 +36,7 @@ int knight::current_knight(){
 enemy** knight::get_knights(){
     return knights;
 }
-//Adding knights to array
+/*Adding knights to array
 bool knight::add_knight(enemy* new_knight){
     if (count<limit){
         knights[count]=new_knight;
@@ -46,7 +46,7 @@ bool knight::add_knight(enemy* new_knight){
     else{
         return false;
     }
-}
+}*/
 void knight::set_health(int Hp){
     health=Hp;
     //Ensuring hp says above or equal to 0
