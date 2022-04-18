@@ -2,7 +2,7 @@
 #include "player.h"
 #include "hero.h"
 #include "enemy.h"
-#include <climits>
+#include "input.h"
 #include <iostream>
 #include <stdlib.h>
 #include <string>
@@ -11,11 +11,10 @@
 using namespace std;
 
 //Hero global variable
-hero h1;
+static hero h1;
 
 //Function Names: (Defined after the end of knightarc function)
 void heroAttack();
-int getting_input();
 
 void knightarc(){
     //Knight class
@@ -104,8 +103,9 @@ void knightarc(){
 
             //Player health check
             if(h1.get_player_health()<=0){
-            cout << "Defeated" << endl;
-            exit(EXIT_FAILURE);
+                cout << "Defeated" << endl;
+                //exit(EXIT_FAILURE);
+                return;
             }
             else{
             cout<<"Beaten knight " << i+1 << "..." << endl;
@@ -128,32 +128,6 @@ void knightarc(){
 
 
 //Defining functions used for input attacks
-
-//Function: Used to get only valid input
-int getting_input (){
-    int input;
-
-    while (1){
-        cin >> input;
-        //If value is not an integer
-        if (!cin){
-            cout << "Please enter a valid attack..." << endl;
-            cin.clear();
-            cin.ignore (INT_MAX, '\n');
-            continue;
-        }
-        //If value is not 1 or 2 for the defined attacks
-        if (input!=1 && input!=2){
-            cout << "Please enter a valid attack..." << endl;
-            continue;
-        }
-        //If obtained value is suitable
-        if (input==1 || input==2){
-            return input; //Exit function
-        }
-    }//End of while loop
-}
-
 
 //Function used to get input
 void heroAttack(){
