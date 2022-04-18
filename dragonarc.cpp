@@ -44,7 +44,7 @@ static void heroAttack(){
 
 
 
-vector<int> dragonarc(int health, int mana){
+vector<int> dragonarc(int health, int mana, int archer){
     h1.set_player_mana(mana);
     h1.set_player_health(health);
 
@@ -92,7 +92,9 @@ vector<int> dragonarc(int health, int mana){
         //Status redefinition
         d2->set_health(d2->get_health()-h1.get_health_dmg());
         d3->set_magic(d3->get_magic()-h1.get_magic_dmg());
-        cout << "Dragon Prince health: " << d2->get_health() << endl;
+
+        if (archer==1){cout << "Dragon Prince health: " << d2->get_health() << "   -50 Archer attack: "; d2->set_health(d2->get_health()-50); cout << d2->get_health() << endl;}
+        else{cout << "Dragon Prince health: " << d2->get_health() << endl;}
         cout << "Dragon Prince magic: " << d3->get_magic() << endl;
 
         //Dragon's counterattack begins
