@@ -1,6 +1,6 @@
 #Testing with dependancies
 main: main.cpp dragon.o knight.o mage.o hero.o enemy.o
-	g++ main.cpp knightarc.cpp magearc.cpp dragonarc.cpp dragon.o knight.o mage.o hero.o enemy.o -o main
+	g++ main.cpp knightarc.cpp magearc.cpp dragonarc.cpp input.cpp dragon.o knight.o mage.o hero.o enemy.o -o main
 	./a.out
 
 dragon.o: dragon.cpp dragon.h
@@ -41,30 +41,30 @@ knight_test:
 
 # Automated tests
 test:
-	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp
+	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp input.cpp
 	./a.out
 
 
 
 # Automated tests using specified input
 test1:
-	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp
+	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp input.cpp
 	./a.out < input1.txt
 
 test2:
-	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp
+	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp input.cpp
 	./a.out < input2.txt
 
 test3:
-	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp
+	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp input.cpp
 	./a.out < input3.txt
 
 test4:
-	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp
+	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp input.cpp
 	./a.out < input4.txt
 
 test5:
-	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp
+	clang++ dragon.cpp knight.cpp mage.cpp hero.cpp enemy.cpp main.cpp knightarc.cpp magearc.cpp dragonarc.cpp input.cpp
 	./a.out < input5.txt
 
 clean:
