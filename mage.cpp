@@ -9,7 +9,7 @@ using namespace std;
 //Constructor
 mage::mage(){
     //Initialising variables
-    magic = 400;
+    magic=400;
     count=0;
     limit=0;
     mages=nullptr;
@@ -26,7 +26,7 @@ void mage::prologue(){
 mage::mage(int curr_size, int max_size){
     limit=max_size;//Equating variables
     count=curr_size;//Equating variables
-    mages= new enemy*[limit];
+    mages=new enemy*[limit];
 }
 //Getting current count of mages
 int mage::current_mage(){
@@ -36,7 +36,7 @@ int mage::current_mage(){
 enemy** mage::get_mages(){
     return mages;
 }
-//Adding mages to array
+/*Adding mages to array
 bool mage::add_mage(enemy* new_mage){
     if (count<limit){
         mages[count]=new_mage;
@@ -46,7 +46,7 @@ bool mage::add_mage(enemy* new_mage){
     else{
         return false;
     }
-}
+}*/
 //Setting magic
 void mage::set_magic(int Mana){
     magic=Mana;//Equating variables
