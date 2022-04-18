@@ -8,8 +8,8 @@ class knight: public enemy{
 
     //Private functions/variables
     private:
-    int count;
-    int limit;
+    int count=0;
+    int limit=0;
     enemy** knights;
 
     //Public functions/variables
@@ -20,7 +20,7 @@ class knight: public enemy{
     knight(int curr_size, int max_size);
     int current_knight();
     enemy** get_knights();
-    bool add_knight(enemy* new_knight);
+    //bool add_knight(enemy* new_knight);
     void set_health(int Hp);
     int get_health();
     int random_number();
