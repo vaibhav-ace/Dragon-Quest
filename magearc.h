@@ -1,7 +1,8 @@
 #ifndef MAGEARC_H
 #define MAGEARC_H
+#include <vector>
 
 //The mage arc begins!
-void magearc(int health, int mana);
+std::vector<int> magearc(int health, int mana);
 
 #endif
