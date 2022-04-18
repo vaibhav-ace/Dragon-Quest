@@ -32,8 +32,9 @@ int main(){
     if (new_arc[0]!=0 && key!="esc"){
         //Dragon arc begins!
         power=quest_map(new_arc[0], new_arc[1]);
-        new_arc=dragonarc(new_arc[0], new_arc[1]);
-        if (power==1 && new_arc[0]==0){dragonarc(2000,100);}//new life obtained
+        if (power==2){new_arc=dragonarc(new_arc[0], new_arc[1], 1);}//dragon arc with archer support
+        else{new_arc=dragonarc(new_arc[0], new_arc[1], 0);}
+        if (power==1 && new_arc[0]==0){dragonarc(2000,100,0);}//new life obtained
     }
 
     return 0;
