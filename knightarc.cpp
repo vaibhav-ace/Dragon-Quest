@@ -3,20 +3,48 @@
 #include "hero.h"
 #include "enemy.h"
 #include "input.h"
+#include "knightarc.h"
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include "knightarc.h"
-#include "magearc.h"
+#include <vector>
 using namespace std;
 
 //Hero global variable
 static hero h1;
 
-//Function Names: (Defined after the end of knightarc function)
-void heroAttack();
+//Defining functions used for input attacks
+//Function used to get input
+static void heroAttack(){
+    cout << "Please enter attack: 1.Basic Attack 2.Fireball " << endl;
+    int input=getting_input();//Going to the function above to check if the input is valid
 
-void knightarc(){
+    //Setting move
+    h1.setMove(input);
+
+    //Setting attack values for input 1 and 2
+    if(h1.getMove() == 1){
+     h1.set_attack(100);
+     h1.get_attack();
+     h1.set_player_mana(h1.get_player_mana()-0);
+     cout<< "Player Current Mana: " << h1.get_player_mana() << endl;
+
+    }
+    else if (h1.getMove() == 2 && h1.get_player_mana() > 0){
+        h1.setFirstSkill(200,200);
+        h1.set_player_mana(h1.get_player_mana()-10); //uses mana for each skill usage
+        cout<< "Player Current Mana: " << h1.get_player_mana() << endl;
+    }
+    else {
+        //Else case (when hero have no mana to input the required skill)
+        cout << "Not Enough Mana :( " << endl;
+        heroAttack(); //loop back to repeat label for input
+    }
+}
+
+
+
+vector<int> knightarc(int health, int mana){
     //Knight class
     enemy* k1=new knight(); //Prologue
     knight k9;//For random number
@@ -52,7 +80,7 @@ void knightarc(){
 
     //For loop iterating new knights to the game
     for(int i=0;i<3;i++){
-        if (k13.add_knight(&arr[i]) && h1.get_player_health() > 0){
+        if (/*k13.add_knight(&arr[i]) &&*/ h1.get_player_health() > 0){
             cout<<"Knight "<< i+1 << " entered the battlefield..."<<endl;
             //While loop to repeat code if needed
             while (arr[i].get_health()>0 && h1.get_player_health() > 0){
@@ -105,55 +133,21 @@ void knightarc(){
             if(h1.get_player_health()<=0){
                 cout << "Defeated" << endl;
                 //exit(EXIT_FAILURE);
-                return;
+                return {0,0};
             }
             else{
             cout<<"Beaten knight " << i+1 << "..." << endl;
             }
         }//If loop ends
     }//For loop ends
-    cout << "Successfully exterminated " << k13.current_knight()<< " knights..." << endl;
+    cout << "Successfully exterminated 3 knights..." << endl;
     cout << "----------------------------------------------------------------------------"<<endl;
     //End of the Knight arc
 
     //knight variables
     delete k1;
 
-    //Mage arc begins!
-    magearc(h1.get_player_health(),h1.get_player_mana());
+    vector <int> result {h1.get_player_health(),h1.get_player_mana()};
 
-    return;
-}
-
-
-
-//Defining functions used for input attacks
-
-//Function used to get input
-void heroAttack(){
-    repeat:
-    cout << "Please enter attack: 1.Basic Attack 2.Fireball " << endl;
-    int input=getting_input();//Going to the function above to check if the input is valid
-
-    //Setting move
-    h1.setMove(input);
-
-    //Setting attack values for input 1 and 2
-    if(h1.getMove() == 1){
-     h1.set_attack(100);
-     h1.get_attack();
-     h1.set_player_mana(h1.get_player_mana()-0);
-     cout<< "Player Current Mana: " << h1.get_player_mana() << endl;
-
-    }
-    else if (h1.getMove() == 2 && h1.get_player_mana() > 0){
-        h1.setFirstSkill(200,200);
-        h1.set_player_mana(h1.get_player_mana()-10); //uses mana for each skill usage
-        cout<< "Player Current Mana: " << h1.get_player_mana() << endl;
-    }
-    else {
-        //Else case (when hero have no mana to input the required skill)
-        cout << "Not Enough Mana :( " << endl;
-        goto repeat; //loop back to repeat label for input
-    }
+    return result;
 }
