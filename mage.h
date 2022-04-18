@@ -7,8 +7,8 @@ class mage: public enemy{
 
     //Private functions/variables
     private:
-    int count;
-    int limit;
+    int count=0;
+    int limit=0;
     enemy** mages;
 
     //Public functions/variables
@@ -19,7 +19,7 @@ class mage: public enemy{
     mage(int curr_size, int max_size);
     int current_mage();
     enemy** get_mages();
-    bool add_mage(enemy* new_mage);
+    //bool add_mage(enemy* new_mage);
     void set_magic(int Mana);
     int get_magic();
     int random_number();
