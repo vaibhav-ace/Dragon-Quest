@@ -1,152 +1,21 @@
- #include "dragon.h"
+#include "knight.h"
 #include "player.h"
 #include "hero.h"
 #include "enemy.h"
 #include "input.h"
+#include "knightarc.h"
 #include <iostream>
 #include <stdlib.h>
 #include <string>
-#include "dragonarc.h"
+#include <vector>
 using namespace std;
 
 //Hero global variable
 static hero h1;
 
-//Function Names: (Defined after the end of dragonarc function)
-void heroAttack3();
-
-void dragonarc(int health, int mana){
-    h1.set_player_mana(mana);
-    h1.set_player_health(health);
-
-    //Dragon class
-    dragon* d1=new dragon(); //Prologue
-    dragon* d2=new dragon(); //Health
-    dragon* d3=new dragon();//Magic
-
-    //Dragon attack interface
-    dragon* d4=new dragon();//For random number
-    dragon* d5=new dragon();
-    dragon* d6=new dragon();
-    dragon* d7=new dragon();
-    dragon* d8=new dragon();
-    dragon* d9=new dragon();
-    //Defining Attacks
-    d5->set_attack_health(100);
-    d5->set_attack_magic(100);
-    d5->set_attack_name("Aspiro");
-    d6->set_attack_health(50);
-    d6->set_attack_magic(200);
-    d6->set_attack_name("Fulminis");
-    d7->set_attack_health(150);
-    d7->set_attack_magic(300);
-    d7->set_attack_name("Ventus Spiralis");
-    d8->set_attack_health(1000);
-    d8->set_attack_magic(0);
-    d8->set_attack_name("Echoz Thunderiz");
-    d9->set_attack_health(0);
-    d9->set_attack_magic(1000);
-    d9->set_attack_name("Manus Pluma Volantus");
-
-    //Dragon arc begins
-    d1->prologue();//Prologue and status definition(below):
-    cout << "Health: " << d2->get_health() << endl;
-    cout << "Magic: " << d3->get_magic() << endl;
-    cout << "++++++ 100 MANA +++++" << endl << "Player Mana now at 100" << endl << endl;
-    h1.set_player_mana(100);
-
-    //While loop to ensure player is alive while game continues
-    while (d2->get_health()>0 && h1.get_player_health() > 0){
-
-        heroAttack3();//Obtaining input
-        cout << "Player current hp:" << h1.get_player_health() << endl;
-        //Status redefinition
-        d2->set_health(d2->get_health()-h1.get_health_dmg());
-        d3->set_magic(d3->get_magic()-h1.get_magic_dmg());
-        cout << "Dragon Prince health: " << d2->get_health() << endl;
-        cout << "Dragon Prince magic: " << d3->get_magic() << endl;
-
-        //Dragon's counterattack begins
-        if (d2->get_health()>0){
-            int random_3=d4->random_number();//Random attack selection
-            //Attack 1
-            if (random_3==1){
-                cout<<"You have been hit with "<<d5->get_attack_name()<<", -"<<d5->get_attack_health()<<" health and -"<<d5->get_attack_magic()<<" magic..."<<endl;
-                h1.set_player_health(h1.get_player_health()-d5->get_attack_health());
-                cout << "Player hp: " << h1.get_player_health() << endl;
-                h1.set_player_mana(h1.get_player_mana() - d5->get_attack_magic());
-                cout << "Player mana:" << h1.get_player_mana() << endl;
-            }
-
-            //Attack 2
-            if (random_3==2){
-                cout<<"You have been hit with "<<d6->get_attack_name()<<", -"<<d6->get_attack_health()<<" health and -"<<d6->get_attack_magic()<<" magic..."<<endl;
-                h1.set_player_health(h1.get_player_health()-d6->get_attack_health());
-                cout << "Player hp: " << h1.get_player_health() << endl;
-                h1.set_player_mana(h1.get_player_mana() - d6->get_attack_magic());
-                cout << "Player mana:" << h1.get_player_mana() << endl;
-            }
-
-            //Attack 3
-            if (random_3==3){
-                cout<<"You have been hit with "<<d7->get_attack_name()<<", -"<<d7->get_attack_health()<<" health and -"<<d7->get_attack_magic()<<" magic..."<<endl;
-                h1.set_player_health(h1.get_player_health()-d7->get_attack_health());
-                cout << "Player hp: " << h1.get_player_health() << endl;
-                h1.set_player_mana(h1.get_player_mana() - d7->get_attack_magic());
-                cout << "Player mana:" << h1.get_player_mana() << endl;
-            }
-
-            //Attack 4
-            if (random_3==4){
-                cout<<"You have been hit with "<<d8->get_attack_name()<<", -"<<d8->get_attack_health()<<" health and -"<<d8->get_attack_magic()<<" magic..."<<endl;
-                h1.set_player_health(h1.get_player_health()-d8->get_attack_health());
-                cout << "Player hp: " << h1.get_player_health() << endl;
-                h1.set_player_mana(h1.get_player_mana() - d8->get_attack_magic());
-                cout << "Player mana:" << h1.get_player_mana() << endl;
-            }
-
-            //Attack 5
-            if (random_3==5){
-                cout<<"You have been hit with "<<d9->get_attack_name()<<", -"<<d9->get_attack_health()<<" health and -"<<d9->get_attack_magic()<<" magic..."<<endl;
-                h1.set_player_health(h1.get_player_health()-d9->get_attack_health());
-                h1.set_player_mana(h1.get_player_mana() - d9->get_attack_magic());
-                cout << "Player hp: " << h1.get_player_health() << endl;
-                cout << "Player mana:" << h1.get_player_mana() << endl;
-            }
-        }
-    }
-    //Player health check
-    if(h1.get_player_health()<=0){
-        cout << "Defeated" << endl;
-        cout << "----------------------------------------------------------------------------"<<endl;
-        //exit(EXIT_FAILURE);
-        return;
-    }
-    cout << "Successfully slayed the dragon prince!" << endl;
-    cout << "----------------------------------------------------------------------------"<<endl;
-    //End of dragon arc
-
-
-    //Freeing memory
-    //dragon variables
-    delete d1;
-    delete d2;
-    delete d3;
-    delete d4;
-    delete d5;
-    delete d6;
-    delete d7;
-    delete d8;
-    delete d9;
-
-    return;
-}
-
 //Defining functions used for input attacks
-
 //Function used to get input
-void heroAttack3(){
-    repeat:
+static void heroAttack(){
     cout << "Please enter attack: 1.Basic Attack 2.Fireball " << endl;
     int input=getting_input();//Going to the function above to check if the input is valid
 
@@ -169,6 +38,116 @@ void heroAttack3(){
     else {
         //Else case (when hero have no mana to input the required skill)
         cout << "Not Enough Mana :( " << endl;
-        goto repeat; //loop back to repeat label for input
+        heroAttack(); //loop back to repeat label for input
     }
+}
+
+
+
+vector<int> knightarc(int health, int mana){
+    //Knight class
+    enemy* k1=new knight(); //Prologue
+    knight k9;//For random number
+
+    //Knight array objects
+    knight k10;
+    knight k11;
+    knight k12;
+    knight arr[]={k10,k11,k12};
+    knight k13(0,3);
+
+    //Knight attack interface: Defining attacks
+    k10.set_attack_health(10);
+    k10.set_attack_name("Zakere");
+    k11.set_attack_health(50);
+    k11.set_attack_name("Rashield");
+    k12.set_attack_health(90);
+    k12.set_attack_name("Bao Zakerga");
+    k13.set_attack_name("Phoenix");
+    k13.set_attack_health(0);//Unused
+
+
+    //Knight arc
+
+    //Introductory message to the game
+    cout<<"Welcome to the game Dragon Quest! Your journey begins here..." << endl;
+    cout<<"For a thousand years, a mystical dragon has ruled the world and spread evil over the entire planet." << endl;
+    cout<<"As the legendary hero weilding an unwavering will to protect others, you set out on a journey to protect your loved ones..."<<endl;
+    cout<<"After a long and tiresome war you have successfully infiltrated the dragon's lair in the palace of Elvshire. Your real battle against evil begins anew..." << endl;
+
+    k1->prologue();//Prologue for knight class
+    cout<<endl<<"Current knights: " << k13.current_knight()<<endl;
+
+    //For loop iterating new knights to the game
+    for(int i=0;i<3;i++){
+        if (/*k13.add_knight(&arr[i]) &&*/ h1.get_player_health() > 0){
+            cout<<"Knight "<< i+1 << " entered the battlefield..."<<endl;
+            //While loop to repeat code if needed
+            while (arr[i].get_health()>0 && h1.get_player_health() > 0){
+                    heroAttack();//Attaining input from user for attack
+                    cout << "Player current hp:" << h1.get_player_health() << endl;
+                    arr[i].set_health(arr[i].get_health()-h1.get_health_dmg());
+
+                    cout << "Knight health: " << arr[i].get_health() << endl;
+                //Knight attacks on the player
+                if (arr[i].get_health()>0){
+                    int random_1=k9.random_number();//Random attack definition
+
+                    //Attack 1
+                    if (random_1==1){
+                        cout<<"You have been hit with "<<k10.get_attack_name()<<", -"<<k10.get_attack_health()<<" health..."<<endl;
+                        h1.set_player_health(h1.get_player_health()-k10.get_attack_health());
+                        cout << "Player hp: " << h1.get_player_health() << endl;
+                    }
+
+                    //Attack 2
+                    if (random_1==2){
+                        cout<<"You have been hit with "<<k11.get_attack_name()<<", -"<<k11.get_attack_health()<<" health..."<<endl;
+                        h1.set_player_health(h1.get_player_health()-k11.get_attack_health());
+                        cout << "Player hp: " << h1.get_player_health() << endl;
+                    }
+
+                    //Attack 3
+                    if (random_1==3){
+                        cout<<"You have been hit with "<<k12.get_attack_name()<<", -"<<k12.get_attack_health()<<" health..."<<endl;
+                        h1.set_player_health(h1.get_player_health()-k12.get_attack_health());
+                        cout << "Player hp: " << h1.get_player_health() << endl;
+                    }
+
+                    //Attack 4: Reflection damage
+                    if (random_1==4){
+                        cout<<"The knight has reflected and recovered from your damage with "<<k13.get_attack_name()<<", -"<<h1.get_health_dmg()<<" health..."<<endl;
+                        h1.set_player_health(h1.get_player_health()-h1.get_health_dmg());
+                        arr[i].set_health(arr[i].get_health()+h1.get_health_dmg());
+                        cout << "Knight health: " << arr[i].get_health() << endl;
+                        cout << "Player hp: " << h1.get_player_health() << endl;
+                    }
+                }
+                //Else case for unexpected cases (should not happen)
+                else {
+                    break;
+                }
+            }//While loop ends
+
+            //Player health check
+            if(h1.get_player_health()<=0){
+                cout << "Defeated" << endl;
+                //exit(EXIT_FAILURE);
+                return {0,0};
+            }
+            else{
+            cout<<"Beaten knight " << i+1 << "..." << endl;
+            }
+        }//If loop ends
+    }//For loop ends
+    cout << "Successfully exterminated 3 knights..." << endl;
+    cout << "----------------------------------------------------------------------------"<<endl;
+    //End of the Knight arc
+
+    //knight variables
+    delete k1;
+
+    vector <int> result {h1.get_player_health(),h1.get_player_mana()};
+
+    return result;
 }
