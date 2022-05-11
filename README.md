@@ -16,4 +16,6 @@ Please refer to the 'Description' (PDF) among the files for further information 
 No code was copied from any other internet sources for this project.
 This is an independent project undertaken by me and my partner at The University of Adelaide, built from scratch!
 
-**To run game use command "make test"!**
+**To run game, export the code files to a folder, navigate to a folder via the terminal and use command "make test"!**
+
+![image](https://user-images.githubusercontent.com/99183587/167771575-e4ce47b2-b9d7-4ff9-b36e-0ef2b1d1c334.png)
