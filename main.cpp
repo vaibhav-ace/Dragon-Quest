@@ -16,6 +16,9 @@ int main(){
     string key="";
 
     //Game starts
+    cout <<"\t\t\t\t\t\t#################################################"<<endl;
+    cout <<"\t\t\t\t\t\t#####              DRAGON QUEST             #####"<<endl;
+    cout <<"\t\t\t\t\t\t#################################################"<<endl;
     cout << "Press any key to start... esc to Escape..." << endl;
     cin >> key;
 
