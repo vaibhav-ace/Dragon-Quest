@@ -14,7 +14,7 @@ int quest_map(int &health, int &mana){
     if (input == "2"){mana+=500; cout << "Mana +++500+++" <<endl;}
     if (input == "3"){cout << "Extra life obtained..."<<endl;}
     if (input == "4"){cout << "Party member, 'Archer' obtained..."<<endl <<"Archer will constantly deal 50 physical damage to the enemy..."<<endl;}
-    else{cout << "You have chosen nothing as your ally against the Dragon Prince... May the goddess of luck be with you brave warrior..." <<endl;}
+    if (input!="1" && input!="2" && input!="3" && input!="4"){cout << "You have chosen nothing as your ally against the Dragon Prince... May the goddess of luck be with you brave warrior..." <<endl;}
 
     cout << "----------------------------------------------------------------------------" << endl << endl << endl <<endl <<endl <<"----------------------------------------------------------------------------"<<endl;
     if (input=="3"){return 1;}
