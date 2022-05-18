@@ -4,6 +4,7 @@
 #include "magearc.h"
 #include "dragonarc.h"
 #include "quest_map.h"
+#include "welcome.h"
 using namespace std;
 
 //Main Function: Execution of the game
@@ -16,11 +17,9 @@ int main(){
     string key="";
 
     //Game starts
-    cout <<"\t\t\t\t\t\t#################################################"<<endl;
-    cout <<"\t\t\t\t\t\t#####              DRAGON QUEST             #####"<<endl;
-    cout <<"\t\t\t\t\t\t#################################################"<<endl;
-    cout << "Press any key to start... esc to Escape..." << endl;
+    welcome();//welcome message
     cin >> key;
+
 
     //Knight arc begins!
     if (key!="esc"){
