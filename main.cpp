@@ -49,6 +49,7 @@ int main(){
 
     Cheat codes:
     - "dragon" in key skips mage arc
+    - "mana" maybe less than 10 and greater than 0 but the player will be able to still use the attack 'fireball'
 
     Run Code: make test OR make main
 */
