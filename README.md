@@ -15,7 +15,7 @@ buffs and power-ups.
 Please refer to the 'Description' (PDF) among the files for further information on the game mechanics, design, class diagrams, user interface, testing, etc. Note that some of the implementions have deviated from the description due to additional functionality or changes to the code.
 
 No code was copied from any other internet sources for this project.
-This is an independent project undertaken by me and my partner at The University of Adelaide, built from scratch!
+This is an independent project undertaken by me and another team member at The University of Adelaide, built from scratch!
 
 **To run game, export the code files to a folder, navigate to a folder via the terminal and use command "make test"!**
 
