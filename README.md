@@ -1,8 +1,9 @@
 **Important Information**
 
 This project was undertaken in an Object Oriented Programming course at The University of Adelaide.
-This game program was developed by me and a partner in the course. Please do not plagiarise the code which might cause yourself legal or copyright issues.
-All permissions were asked from the Partner before publishing this code to a public GitHub repository.
+This game program was developed by me and a team member in the course.
+All permissions were asked from the member before publishing this code to a public GitHub repository.
+Constant refactoring and functionality addition has already changed this project from the initial proect by about 50%.
 
 **Note: Game Description**
 
