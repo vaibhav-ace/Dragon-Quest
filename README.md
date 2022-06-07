@@ -1,9 +1,6 @@
 **Important Information**
 
-This project was undertaken in an Object Oriented Programming course at The University of Adelaide.
-This game program was developed by me and a team member in the course.
-All permissions were asked from the member before publishing this code to a public GitHub repository.
-Constant refactoring and functionality addition has already changed this project from the initial project by about 50%.
+This project is a game program developed from scratch.
 
 **Note: Game Description**
 
@@ -12,10 +9,8 @@ The game uses object-oriented concepts as the basis to include knights, mages an
 the enemies. Fine-details added to the storyline to make the program interesting, including hidden 
 buffs and power-ups.
 
-Please refer to the 'Description' (PDF) among the files for further information on the game mechanics, design, class diagrams, user interface, testing, etc. Note that some of the implementions have deviated from the description due to additional functionality or changes to the code.
-
 No code was copied from any other internet sources for this project.
-This is an independent project undertaken by me and another team member at The University of Adelaide, built from scratch!
+This is an independent project undertaken by me, built from scratch!
 
 **To run game, export the code files to a folder, navigate to a folder via the terminal and use command "make test"!**
 
