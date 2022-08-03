@@ -10,7 +10,7 @@ the enemies. Fine-details added to the storyline to make the program interesting
 buffs and power-ups.
 
 No code was copied from any other internet sources for this project.
-This is an independent project undertaken by me, built from scratch!
+This is an independent project, built from scratch!
 
 **To run game, export the code files to a folder, navigate to a folder via the terminal and use command "make test"!**
 
