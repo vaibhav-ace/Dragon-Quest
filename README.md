@@ -15,4 +15,5 @@ This is an independent project, built from scratch!
 **To run game, export the code files to a folder, navigate to a folder via the terminal and use command "make test"!**
 
 
-![image](https://user-images.githubusercontent.com/99183587/185077053-86f7179e-222f-47e9-8d61-b8b9d88585a2.png)
+![ss](https://user-images.githubusercontent.com/99183587/185077268-4a7a37c0-a29b-4ab1-8656-79d2776be3a6.png)
+
