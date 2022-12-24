@@ -18,7 +18,6 @@ class knight: public enemy{
     void prologue();
 
     knight(int curr_size, int max_size);
-    int current_knight();
     enemy** get_knights();
     //bool add_knight(enemy* new_knight);
     void set_health(int Hp);

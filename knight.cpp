@@ -28,25 +28,11 @@ knight::knight(int curr_size, int max_size){
     count=curr_size;//Equating variables
     knights=new enemy*[limit];
 }
-//Returning current knight count
-int knight::current_knight(){
-    return count;
-}
 //Getting knights
 enemy** knight::get_knights(){
     return knights;
 }
-/*Adding knights to array
-bool knight::add_knight(enemy* new_knight){
-    if (count<limit){
-        knights[count]=new_knight;
-        count++;
-        return true;
-    }
-    else{
-        return false;
-    }
-}*/
+//Set health
 void knight::set_health(int Hp){
     health=Hp;
     //Ensuring hp says above or equal to 0

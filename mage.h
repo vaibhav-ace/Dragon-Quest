@@ -17,7 +17,6 @@ class mage: public enemy{
     void prologue();
 
     mage(int curr_size, int max_size);
-    int current_mage();
     enemy** get_mages();
     //bool add_mage(enemy* new_mage);
     void set_magic(int Mana);

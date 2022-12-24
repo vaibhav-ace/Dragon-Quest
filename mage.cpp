@@ -28,25 +28,12 @@ mage::mage(int curr_size, int max_size){
     count=curr_size;//Equating variables
     mages=new enemy*[limit];
 }
-//Getting current count of mages
-int mage::current_mage(){
-    return count;
-}
+
 //Getting mages
 enemy** mage::get_mages(){
     return mages;
 }
-/*Adding mages to array
-bool mage::add_mage(enemy* new_mage){
-    if (count<limit){
-        mages[count]=new_mage;
-        count++;
-        return true;
-    }
-    else{
-        return false;
-    }
-}*/
+
 //Setting magic
 void mage::set_magic(int Mana){
     magic=Mana;//Equating variables
