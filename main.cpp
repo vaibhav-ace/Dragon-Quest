@@ -11,7 +11,8 @@ using namespace std;
 int main(){
 
     //Game variables
-    int health=10000;int mana=10000;
+    int health=0;
+    int mana=0;
     vector <int> new_arc {health, mana};
     int power=0;
     string key="";
